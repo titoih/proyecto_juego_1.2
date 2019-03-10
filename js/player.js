@@ -75,7 +75,7 @@ Player.prototype.setListeners = function() {
 };
 
 Player.prototype.shoot = function() {
-  var bullet = new Bullet(this.game, this.xGun2, this.yGun2);
+  var bullet = new Bullet(this.game, this.xGun2, this.yGun2, this.x, this.y,this.angle); //*//
 
   this.bullets.push(bullet);
 };
@@ -84,5 +84,6 @@ Player.prototype.move = function() {
   this.angle += this.rotate;
   this.xGun2 = this.xGun + this.length * Math.cos(this.angle);
   this.yGun2 = this.yGun + this.length * Math.sin(this.angle);
-  
 };
+
+  // cómo puedo llamar a this.x this.y de player sin meter en el new ()¿?
