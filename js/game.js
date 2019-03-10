@@ -11,7 +11,7 @@ Game.prototype.start = function() {
     this.clear();
     this.moveAll();
     this.draw();
-  }.bind(this), 100);
+  }.bind(this), 50);
 };
 
 Game.prototype.reset = function() {

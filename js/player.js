@@ -13,10 +13,11 @@ function Player(game,x,y,width,height,color,xGun,yGun,length,angle,colorGun) {
   this.xGun2 = this.xGun + this.length * Math.cos(this.angle);
   this.yGun2 = this.yGun + this.length * Math.sin(this.angle);
   this.colorGun = colorGun;
+
+  this.bullets = [];
+
   this.setListeners();
 }
-
-var TOP_KEY = 38;
 
 Player.prototype.draw = function() {
   //cuadrado
@@ -31,17 +32,53 @@ Player.prototype.draw = function() {
   this.game.ctx.moveTo(this.xGun, this.yGun);
   this.game.ctx.lineTo(this.xGun2, this.yGun2);
   this.game.ctx.stroke();
+
+  this.bullets = this.bullets.filter(function(bullet) {
+    return bullet.x;
+  }.bind(this));
+
+  this.bullets.forEach(function(bullet) {
+    bullet.draw();
+    bullet.move();
+  });
 };
 
-
 Player.prototype.setListeners = function() {
+
+  var TOP_KEY = 65;
+  var DOWN_KEY = 68;
+  var SHOOT = 83;
+
   document.onkeydown = function(event) {
     if (event.keyCode === TOP_KEY) {
-      this.rotate += 0.2;
+      this.rotate = -0.2;
     }
+    else if (event.keyCode == DOWN_KEY) {
+      this.rotate = 0.2
+    }
+    else if (event.keyCode == SHOOT) {
+      this.shoot();
+    }
+  }.bind(this);
+  document.onkeyup = function(event) {
+    if (event.keyCode === TOP_KEY) {
+      this.rotate = false;
+    }
+    else if (event.keyCode === DOWN_KEY) {
+      this.rotate = false;
+    }
+    else if (event.keyCode == SHOOT) {
+      return false;
+    }
+
   }.bind(this);
 };
 
+Player.prototype.shoot = function() {
+  var bullet = new Bullet(this.game, this.xGun2, this.yGun2);
+
+  this.bullets.push(bullet);
+};
 
 Player.prototype.move = function() {
   this.angle += this.rotate;
@@ -49,43 +86,3 @@ Player.prototype.move = function() {
   this.yGun2 = this.yGun + this.length * Math.sin(this.angle);
   
 };
-
-/*
-function gun(x, y, len, angle) {
-  this.tablero = tablero;
-  this.rotate = 0;
-  this.x = x;
-  this.y = y;
-  this.len = len;
-  this.angle = angle;
-  this.update = function() {
-      this.x2 = this.x + this.len * Math.cos(this.angle);
-      this.y2 = this.y + this.len * Math.sin(this.angle);
-      ctx = tablero.context;
-      ctx.beginPath();
-      ctx.lineWidth = 14;
-      ctx.strokeStyle = 'green';
-      ctx.moveTo(this.x, this.y);
-      ctx.lineTo(this.x2, this.y2);
-      ctx.stroke();
-  }
-  this.newPos = function() {
-      this.angle += this.rotate;
-  }
-}
-*/
-/*
-
-function BasePlayer (width,height,color,x,y) {
-  this.tableroJuego = tablero;
-  this.width = width;
-  this.height = height;
-  this.x = x;
-  this.y = y;
-  this.update = function(){
-    ctx = tablero.context;
-    ctx.fillStyle = color;
-    ctx.fillRect(this.x, this.y, this.width, this.height);
-  }
-}
-*/
