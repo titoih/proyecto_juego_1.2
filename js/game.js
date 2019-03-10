@@ -6,7 +6,7 @@ function Game(canvasId) {
 }
 
 Game.prototype.start = function() {
-  this.draw();
+  //this.draw();
   this.interval = setInterval (function() {
     this.clear();
     this.moveAll();

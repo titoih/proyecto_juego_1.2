@@ -26,6 +26,14 @@ Bullet.prototype.draw = function() {
 }
 
 Bullet.prototype.move = function() {
+  if (this.y > this.game.canvas.height || this.y < 0) {
+    this.speedy *=-0.9;
+    this.gravitySpeed *= -0.9;
+    this.speedx *= 0.9; 
+  }
+  if (this.x > this.game.canvas.width || this.x < 0) {
+    this.speedx*=-1;
+  }
 
   this.gravitySpeed += this.gravity;
   this.x += this.vx * this.speedx;
