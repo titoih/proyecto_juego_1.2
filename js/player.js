@@ -34,7 +34,7 @@ Player.prototype.draw = function() {
   this.game.ctx.stroke();
 
   this.bullets = this.bullets.filter(function(bullet) {
-    return bullet.x;
+    return bullet.x ;
   }.bind(this));
 
   this.bullets.forEach(function(bullet) {
@@ -51,10 +51,10 @@ Player.prototype.setListeners = function() {
 
   document.onkeydown = function(event) {
     if (event.keyCode === TOP_KEY) {
-      this.rotate = -0.2;
+      this.rotate = -0.03;
     }
     else if (event.keyCode == DOWN_KEY) {
-      this.rotate = 0.2
+      this.rotate = 0.03;
     }
     else if (event.keyCode == SHOOT) {
       this.shoot();
@@ -75,7 +75,7 @@ Player.prototype.setListeners = function() {
 };
 
 Player.prototype.shoot = function() {
-  var bullet = new Bullet(this.game, this.xGun2, this.yGun2, this.x, this.y,this.angle); //*//
+  var bullet = new Bullet(this.game, this.xGun2, this.yGun2, this.x, this.y,this.length,this.angle); //*//
 
   this.bullets.push(bullet);
 };
@@ -85,5 +85,11 @@ Player.prototype.move = function() {
   this.xGun2 = this.xGun + this.length * Math.cos(this.angle);
   this.yGun2 = this.yGun + this.length * Math.sin(this.angle);
 };
+
+Player.prototype.checkCollision = function(){
+  this.bullets.forEach(function(bullet){
+    bullet.collision()
+  })
+}
 
   // cómo puedo llamar a this.x this.y de player sin meter en el new ()¿?

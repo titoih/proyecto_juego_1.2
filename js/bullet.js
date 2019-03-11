@@ -10,8 +10,8 @@ function Bullet(game, x, y, z, q) {
   this.vx = (this.x - this.z)/100;
   this.vy = (this.y - this.q)/100;
 
-  this.speedx = 10;
-  this.speedy = 10;
+  this.speedx = 15;
+  this.speedy = 20;
 
   this.gravity = 0.2;
   this.gravitySpeed = 0;
@@ -26,6 +26,8 @@ Bullet.prototype.draw = function() {
 }
 
 Bullet.prototype.move = function() {
+  //get prize
+  
   if (this.y > this.game.canvas.height || this.y < 0) {
     this.speedy *=-0.9;
     this.gravitySpeed *= -0.9;
@@ -39,4 +41,27 @@ Bullet.prototype.move = function() {
   this.x += this.vx * this.speedx;
   this.y += this.vy * this.speedy + this.gravitySpeed;
 
+
+  //var distX = (this.x - this.game.player.x +this.game.player.width/2);
+  //
+  //var distY = (this.y - this.game.player.y + this.game.player.height/2);
+ //
+  //if (distX > (this.game.player.width/2 + this.r)) { return false; }
+  //if (distY > (this.game.player.height/2 + this.r)) { return false; }
+//
+  //if (distX <= (this.game.player.width/2)) { return true; } 
+  //if (distY <= (this.game.player.height/2)) { return true; }
+
+
 };
+
+Bullet.prototype.collision = function(){
+  if(
+    this.game.prize.x + this.game.prize.width >= this.x && 
+    this.x + this.r >= this.game.prize.x && 
+    this.game.prize.y + this.game.prize.height >= this.y && 
+    this.y + this.r >= this.game.prize.y
+    ) {
+      console.log('hola')
+  }
+}
