@@ -33,13 +33,15 @@ Bullet.prototype.move = function() {
     this.gravitySpeed *= -0.9;
     this.speedx *= 0.9; 
   }
-  if (this.x > this.game.canvas.width || this.x < 0) {
-    this.speedx*=-1;
+  if (this.x > this.game.canvas.width/2) {
+    this.speedx*= 0;
+    this.x = -20;
   }
 
   this.gravitySpeed += this.gravity;
   this.x += this.vx * this.speedx;
   this.y += this.vy * this.speedy + this.gravitySpeed;
+  
 };
 
 Bullet.prototype.collision = function(){
@@ -49,6 +51,19 @@ Bullet.prototype.collision = function(){
     this.game.prize.y + this.game.prize.height >= this.y && 
     this.y + this.r >= this.game.prize.y
     ) {
-      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 1),35,35,'yellow');
+      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 1),20,20,'yellow');
+      this.game.score += 5;
+      this.game.player.bullets = [];
+  }
+  else {
+    if (this.x >= 600) {
+    var count = [];
+    count += this.game.player.bullets.length;
+      if (count > 2 ) {
+        this.game.score -= 5;
+        this.game.player.bullets = [];
+      }
+    }
+    
   }
 }

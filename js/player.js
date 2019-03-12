@@ -37,6 +37,8 @@ Player.prototype.draw = function() {
     return bullet.x ;
   }.bind(this));
 
+  //no entiendo como coge bullet.x sin llamar this.game
+
   this.bullets.forEach(function(bullet) {
     bullet.draw();
     bullet.move();

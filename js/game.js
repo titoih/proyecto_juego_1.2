@@ -15,7 +15,7 @@ Game.prototype.start = function() {
 
 Game.prototype.reset = function() {
   this.player = new Player(this,50,200,100,100,'red',100,245,90,0,'green');
-  this.prize = new Prize (this,this.canvas.width/2, this.canvas.height - Math.floor((Math.random()*450) + 1),35,35,'yellow');
+  this.prize = new Prize (this,this.canvas.width/2, this.canvas.height - Math.floor((Math.random()*450) + 1),25,25,'yellow');
   this.score = 0;
 };
 
