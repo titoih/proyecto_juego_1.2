@@ -15,7 +15,8 @@ Game.prototype.start = function() {
 
 Game.prototype.reset = function() {
   this.player = new Player(this,50,200,100,100,'red',100,245,90,0,'green');
-  this.prize = new Prize (this,this.canvas.width/2, this.canvas.height - Math.floor((Math.random()*450) + 1),50,50,'yellow');
+  this.prize = new Prize (this,this.canvas.width/2, this.canvas.height - Math.floor((Math.random()*450) + 1),35,35,'yellow');
+  this.score = 0;
 };
 
 Game.prototype.clear = function() {
@@ -25,6 +26,7 @@ Game.prototype.clear = function() {
 Game.prototype.draw = function() {
   this.player.draw();
   this.prize.draw();
+  this.drawScore(); 
 };
 
 Game.prototype.moveAll = function() {
@@ -32,3 +34,10 @@ Game.prototype.moveAll = function() {
   this.player.checkCollision()
 };
 
+Game.prototype.drawScore = function() {
+  this.ctx.font = "50px sans-serif";
+  this.ctx.fillStyle = "white";
+  this.ctx.fillText(Math.floor(this.score), 50, 50);
+}
+
+//por qué se llama al prize/player entero desde game? cómo funciona esto?
