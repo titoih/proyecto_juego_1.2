@@ -2,21 +2,21 @@ function Background(game) {
   this.game = game;
 
   this.img = new Image();
-  this.img.src = 'img/snap2359.png';
+  this.img.src = 'img/1.jpg';
 
   this.x = 0;
   this.y = 0;
 
-  this.dx = 5;
+  this.dy = 5;
 }
 
 Background.prototype.draw = function() {
   this.game.ctx.drawImage(this.img, this.x, this.y, this.game.canvas.width, this.game.canvas.height);
-  this.game.ctx.drawImage(this.img, this.x + this.game.canvas.width, this.y, this.game.canvas.width, this.game.canvas.height);
+  this.game.ctx.drawImage(this.img, this.x, this.y - this.game.canvas.height, this.game.canvas.width, this.game.canvas.height);
 };
 
 Background.prototype.move = function() {
-  this.x -= this.dx;
+  this.y += this.dy;
 
-  if (this.x < -this.game.canvas.width) this.x = 0;
+  if (this.y + this.game.canvas.height > this.game.canvas.height + this.game.canvas.height) this.y = 0;
 };
