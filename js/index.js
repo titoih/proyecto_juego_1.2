@@ -1,5 +1,14 @@
 window.onload = function() {
   var game = new Game("canvas");
+  
+  document.getElementById("startGame").addEventListener("click", function(){
+    game.start();
+  });
+};
+
+/*
+window.onload = function() {
+  var game = new Game("canvas");
   function delet() {
     document.getElementById("startGame").remove();
   }
@@ -9,7 +18,5 @@ window.onload = function() {
     game.start();
     
   });
-  
-
-  
 };
+*/

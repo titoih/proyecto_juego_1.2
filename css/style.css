@@ -1,8 +1,15 @@
+.container {
+  /*background-image: url('https://66.media.tumblr.com/a575e9de638084a8b164eb9561b15b46/tumblr_oabbjruFiO1vsjcxvo1_500.gif');*/
+  background-image: url('https://wallpapercave.com/wp/wp2757874.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-size: cover;*/
+  background-color: black;
+  height: 100%;
+}
+
 #canvas {
-  /*position: absolute;*/
-  width: 99%;
-  height: 98%;
-  border: 1px solid red;
+  
 }
 #startGame {
   position: absolute;

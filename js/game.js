@@ -32,7 +32,7 @@ Game.prototype.winner = function() {
 };
 
 Game.prototype.reset = function() {
-  this.background = new Background(this);
+  //this.background = new Background(this);
   this.player = new Player(this,50,200,100,100,'red',100,245,90,0,'green'); 
   this.prize = new Prize (this,this.canvas.width/2, this.canvas.height - Math.floor((Math.random()*450) + 1),25,25,'yellow');
   this.score = 0;
@@ -43,14 +43,14 @@ Game.prototype.clear = function() {
 }; 
 
 Game.prototype.draw = function() {
-  this.background.draw();
+  //this.background.draw();
   this.player.draw();
   this.prize.draw();
   this.drawScore(); 
 };
 
 Game.prototype.moveAll = function() {
-  this.background.move();
+  //this.background.move();
   this.player.move();
   this.player.checkCollision()
 };
