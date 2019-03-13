@@ -1,4 +1,16 @@
 #canvas {
-  /*background-image: url('../img/6362.jpg');*/
-  
+  /*position: absolute;*/
+  width: 99%;
+  height: 98%;
+  border: 1px solid red;
+}
+#startGame {
+  position: absolute;
+  text-align: center;
+  margin: auto;
+  margin-top: 100px;
+  margin-left: 41%;
+  width: 208px;
+  text-align: center;
+  align-items: center;
 }
