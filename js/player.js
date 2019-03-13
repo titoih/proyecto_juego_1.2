@@ -93,5 +93,3 @@ Player.prototype.checkCollision = function(){
     bullet.collision()
   })
 }
-
-// cómo puedo llamar a this.x this.y de player sin meter en el new ()¿?

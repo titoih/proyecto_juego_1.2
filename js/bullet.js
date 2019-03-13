@@ -51,7 +51,8 @@ Bullet.prototype.collision = function(){
     this.game.prize.y + this.game.prize.height >= this.y && 
     this.y + this.r >= this.game.prize.y
     ) {
-      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 1),20,20,'yellow');
+      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 1),25,25,'yellow');
+      // otro new Prize es correcto?
       this.game.score += 5;
       this.game.player.bullets = [];
   }
