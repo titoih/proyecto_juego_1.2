@@ -1,23 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
 .container {
   /*background-image: url('https://66.media.tumblr.com/a575e9de638084a8b164eb9561b15b46/tumblr_oabbjruFiO1vsjcxvo1_500.gif');*/
-  background-image: url('https://wallpapercave.com/wp/wp2757874.gif');
+  /*background-image: url('https://wallpapercave.com/wp/wp2757874.gif');*/
+  background-image: url('https://66.media.tumblr.com/a427a4816e04b1676144acf1f957ae79/tumblr_ngblopQP0Z1sulnzno1_500.gif');
   background-position: center;
   background-repeat: no-repeat;
   /*background-size: cover;*/
   background-color: black;
-  height: 100%;
+  /*height: 100%;*/
 }
 
-#canvas {
-  
+.divnocanvas {
+  text-align: center;
+  height: 0;
 }
+
+.divbutton {
+  position: relative;
+  top: 250px;
+}
+
+.divtitle {
+  color: white;
+}
+
 #startGame {
+  top: 500px;
+}
+
+#counting {
+  color:white;
+  font-size: 200px;
+}
+
+
+
+
+
+
+
+
+
+/*#canvas {
+  
+}*/
+/*#startGame {
+  /*position: absolute;
+  /*text-align: center;
+  /*margin: auto;
+  /*margin-top: 100px;
+  /*margin-left: 41%;
+  /*width: 208px;
+  /*text-align: center;
+  /*align-items: center;
+}
+
+#gameTitle {
+  display: flex;
+  text-align: center;
+  color: white;
   position: absolute;
-  text-align: center;
-  margin: auto;
-  margin-top: 100px;
-  margin-left: 41%;
-  width: 208px;
-  text-align: center;
-  align-items: center;
+  margin-left: 38%;
+}
+
+#counting {
+color:pink;
+
 }
