@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Game</title>
+  <title>ボールの放物線。</title>
 
   <!-- IMPORTANTE EL ORDEN -->
   <!-- Si un objeto necesita otro, incluirlo antes -->
@@ -22,15 +22,29 @@
         <button id="startGame">Start!</button>
       </div>
       <div class="divtitle">
-        <h1 id="gameTitle">PARABOLIC HELL</h1>
+        <h1 id="gameTitle">PARABOLICS HELL</h1>
+        <div>Time <span id="time">00:30</span> sec</div>
       </div>
       <div class="divcounting">
         <span id="counting"></span>
       </div>
+      <div id="instr">
+          <span>Keyboard Controls</span>
+            <ul>
+              <li>a: canyon up</li>
+              <li>d: canyon down</li>
+              <li>s: fire</li>
+              <br>
+              <li class="liHit">hit the target: +5</li>
+              <li class="liLost">lost 2 balls in a row: -5</li>
+            </ul>
+      </div>
+      <div id="divTip">Tip: don't shoot fast!</div>
     </div>
     <div class="divCanvas">
-      <canvas id="canvas" width="1300" height="620"></canvas>
+      <canvas id="canvas" width="1300" height="630"></canvas>
     </div>
+
   </div>
 </body>
 </html>

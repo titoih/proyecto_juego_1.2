@@ -11,12 +11,67 @@ Game.prototype.start = function() {
     this.clear();
     this.moveAll();
     this.draw();
-    //player win
-    if (this.score >= 10) {
-      this.winner();
-    }
   }.bind(this), 50);
 };
+
+Game.prototype.removeMenu = function() {
+  document.getElementById('startGame').remove();
+  document.getElementById('gameTitle').remove();
+  document.getElementById('instr').remove();
+  document.getElementById('divTip').remove();
+  
+}
+
+Game.prototype.startTimer = function() {
+  this.duration = 30  ,
+  this.display = document.querySelector('#time');
+  this.timer = this.duration, this.minutes, this.seconds;
+  console.log(this.minutes)
+    this.set = setInterval(function () {
+        this.minutes = parseInt(this.timer / 60, 10)
+        this.seconds = parseInt(this.timer % 60, 10);
+
+        this.minutes = this.minutes < 10 ? "0" + this.minutes : this.minutes;
+        this.seconds = this.seconds < 10 ? "0" + this.seconds : this.seconds;
+
+        this.display.textContent = this.minutes + ":" + this.seconds;
+
+        if (--this.timer < 0) {
+          clearInterval(this.set)
+          this.winner();
+          this.readyForPlay();
+        }
+        
+    }.bind(this), 1000);
+};
+
+Game.prototype.readyForPlay = function() {
+  this.cuentaAtras = 3;
+    this.ready = document.getElementById('counting');
+
+    this.count = setInterval(function(){
+      this.ready.innerHTML = this.cuentaAtras;
+      if (this.cuentaAtras == 0) {
+        this.cuentaAtras = 'GO!';
+        this.ready.innerHTML = this.cuentaAtras;
+        clearInterval(this.count);
+        this.start();
+        this.fiveMinutes = 10  ,
+        this.display = document.querySelector('#time');
+        this.startTimer(this.fiveMinutes, this.display);
+        this.stopCount = setInterval(function() {
+          document.getElementById('counting').remove();
+          clearInterval(this.stopCount);
+        }.bind(this),1000);
+      }
+      
+      if (this.cuentaAtras != 'GO'){
+        this.cuentaAtras--;
+      }
+    }.bind(this), 700); 
+};
+
+
 
 Game.prototype.stop = function() {
   clearInterval(this.interval);
@@ -25,9 +80,10 @@ Game.prototype.stop = function() {
 Game.prototype.winner = function() {
   this.stop();
   
-  if(confirm("Player One Win! Try Again")) {
+  if(confirm("Game Over:" + this.score)) {
     this.reset();
     this.start();
+    location.reload();
   }
 };
 

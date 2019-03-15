@@ -35,8 +35,36 @@
   color:white;
   font-size: 200px;
 }
+#instr {
+  color: white;
+  position: relative;
+  top:290px;
+  list-style-type: none;
+  border:1px solid white;
+  margin: auto;
+  width:200px;
+  margin-bottom: 20px;
+}
+#instr ul {
+  list-style-type: none;
 
+}
+.liHit {
+  color:green;
+}
+.liLost {
+  color:red;
+}
 
+#divTip {
+  color: white;
+  position: relative;
+  top:300px;
+  list-style-type: none;
+  margin: auto;
+  width:200px;
+  font-style: italic;
+}
 
 
 

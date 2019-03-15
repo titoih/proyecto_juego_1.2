@@ -51,13 +51,12 @@ Bullet.prototype.collision = function(){
     this.game.prize.y + this.game.prize.height >= this.y && 
     this.y + this.r >= this.game.prize.y
     ) {
-      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 1),25,25,'yellow');
-      // otro new Prize es correcto?
+      this.game.prize = new Prize (this.game,this.game.canvas.width/2, this.game.canvas.height - Math.floor((Math.random()*450) + 100),25,25,'yellow');
       this.game.score += 5;
       this.game.player.bullets = [];
   }
   else {
-    if (this.x >= 600) {
+    if (this.x >= 650) {
     var count = [];
     count += this.game.player.bullets.length;
       if (count > 2 ) {
