@@ -14,3 +14,4 @@ El player dispone de 30 segundo para hacer la mayor puntuación.
 
 Imagen Inicio:
 
+https://github.com/titoih/proyecto_juego_1.2/blob/master/cap_inicio.png?raw=true
