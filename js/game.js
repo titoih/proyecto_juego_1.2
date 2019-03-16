@@ -114,9 +114,6 @@ Game.prototype.drawScore = function() {
   this.ctx.fillText(Math.floor(this.score), 50, 50);
 }
 
-Game.prototype.music = function () {
-
-}
 
 //por qué se llama al prize/player entero desde game? cómo funciona esto?
 
