@@ -10,7 +10,7 @@ La base es estática, y el cañón puede rotarse 360º sobre el centro del cuadr
 
 *Cada 3 bolas seguidas que no se acierta el objetivo, se resta -5 al resultado.
 
-El player dispone de 30 segundo para hacer la mayor puntuación.
+El player dispone de 30 segundos para hacer la mayor puntuación.
 
 Imagen Inicio:
 
