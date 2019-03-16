@@ -19,6 +19,7 @@ Game.prototype.removeMenu = function() {
   document.getElementById('gameTitle').remove();
   document.getElementById('instr').remove();
   document.getElementById('divTip').remove();
+  document.getElementById('divMusic').remove();
   
 }
 
@@ -56,8 +57,6 @@ Game.prototype.readyForPlay = function() {
         this.ready.innerHTML = this.cuentaAtras;
         clearInterval(this.count);
         this.start();
-        this.fiveMinutes = 10  ,
-        this.display = document.querySelector('#time');
         this.startTimer(this.fiveMinutes, this.display);
         this.stopCount = setInterval(function() {
           document.getElementById('counting').remove();
@@ -71,8 +70,6 @@ Game.prototype.readyForPlay = function() {
     }.bind(this), 700); 
 };
 
-
-
 Game.prototype.stop = function() {
   clearInterval(this.interval);
 };
@@ -80,7 +77,7 @@ Game.prototype.stop = function() {
 Game.prototype.winner = function() {
   this.stop();
   
-  if(confirm("Game Over:" + this.score)) {
+  if(confirm('Game Over! Your Score is ' + ' ' + this.score)) {
     this.reset();
     this.start();
     location.reload();
@@ -115,6 +112,10 @@ Game.prototype.drawScore = function() {
   this.ctx.font = "50px sans-serif";
   this.ctx.fillStyle = "white";
   this.ctx.fillText(Math.floor(this.score), 50, 50);
+}
+
+Game.prototype.music = function () {
+
 }
 
 //por qué se llama al prize/player entero desde game? cómo funciona esto?
