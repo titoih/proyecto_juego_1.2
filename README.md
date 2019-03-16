@@ -28,5 +28,7 @@ Una vez finalizado el tiempo, el juego se reinicia desde la pantalla Inicio.
 
 Controles:
 a: mueve cañón arriba
+
 d: mueve cañón abajo
+
 s: dispara
