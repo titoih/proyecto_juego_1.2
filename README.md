@@ -14,12 +14,19 @@ El player dispone de 30 segundo para hacer la mayor puntuación.
 
 Imagen Inicio:
 
-![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/cap_inicio.png)
+![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/Screenshot%20from%202019-03-16%2001-13-09.png)
 
 Imagen juego comenzado:
 
-![alt text]
+![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/Screenshot%20from%202019-03-16%2001-13-17.png)
 
 Imagen juego finalizado:
 
-![alt text]
+![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/Screenshot%20from%202019-03-16%2001-13-28.png)
+
+Una vez finalizado el tiempo, el juego se reinicia desde la pantalla Inicio.
+
+Controles:
+a: mueve cañón arriba
+d: mueve cañón abajo
+s: dispara
