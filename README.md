@@ -20,7 +20,7 @@ Imagen juego comenzado:
 
 ![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/Screenshot%20from%202019-03-16%2001-13-17.png)
 
-Imagen juego finalizado:
+Imagen juego disparos puntuación:
 
 ![alt text](https://github.com/titoih/proyecto_juego_1.2/blob/master/Screenshot%20from%202019-03-16%2001-13-28.png)
 
