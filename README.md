@@ -1,4 +1,4 @@
-# juego en canvas y javascript: Parabolics hell
+# Juego Parabolics hell - Canvas y Javascript - 
 
 Juego de disparos a objetivo estático que suma o resta puntos en función de los aciertos o fallos del jugador.
 
